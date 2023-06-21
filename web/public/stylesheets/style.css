@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    background: #A1FFCE;  /* Fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .card-img-top {
+    height: 300px;
+    width: 600px;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 15px;
+  }
+  
+  .btn-danger {
+    margin-left: 5px;
+  }
+  
+  /* Estilos específicos para agregarproductos.ejs */
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Estilos específicos para editarproductos.ejs */
+  /* Aquí puedes agregar estilos adicionales si lo deseas */
+  
+  /* Estilos específicos para productos.ejs */
+  .row {
+    margin-top: 20px;
+  }
+  
+  .col-sm-6 {
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
+  

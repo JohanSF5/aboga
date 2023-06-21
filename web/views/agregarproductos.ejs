@@ -1,0 +1,71 @@
+<%- include ('layouts/header.ejs') -%>
+
+<div class="container">
+  <h1><%= title %></h1>
+
+  <!-- Formulario para agregar datos a mi BD -->
+  <form action="/agregarproductos" method="POST">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Producto</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" required>
+    </div>
+    <div class="mb-3">
+      <label for="imagen" class="form-label">Imagen</label>
+      <input type="text" class="form-control" id="imagen" name="imagen" required>
+    </div>
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <input type="text" class="form-control" id="descripcion" name="descripcion" rows="3" required>
+    </div>
+    <div class="mb-3">
+      <label for="precio" class="form-label">Precio</label>
+      <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
+    </div>
+    <button type="submit" class="btn btn-primary" name="guardar">Guardar producto</button>
+  </form>
+  <br>
+  <div class="row">
+<% for(var i = 0; i < Libros.length; i++) { %>
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <!-- mostrar los datos del producto -->
+      <img src="<%= Libros[i].imagen %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= Libros[i].titulo %></h5>
+        <p class="card-text"><%= Libros[i].descripcion %></p>
+        <p>Precio: $<%= Libros[i].precio %></p>
+        <!-- botones para editar o eliminar el producto -->
+        <a href="/editarproductos/<%= Libros[i].ID %>" class="btn btn-primary">Editar</a>
+        <form class="delete-form" method="POST">
+          <input type="hidden" name="productId" value="<%= Libros[i].ID %>">
+          <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>        
+      </div>
+    </div>
+  </div>
+<% } %>
+<form id="eliminarProductoForm" action="/eliminarproducto" method="POST" style="display: none;">
+  <input type="hidden" id="productIdInput" name="productId">
+</form>
+
+  </div>
+</div>
+<script>
+  var deleteForms = document.getElementsByClassName("delete-form");
+
+  for (var i = 0; i < deleteForms.length; i++) {
+    deleteForms[i].addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      var productId = this.querySelector("input[name=productId]").value;
+      var confirmation = confirm("¿Estás seguro de que deseas eliminar este producto?");
+
+      if (confirmation) {
+        var form = this;
+        form.action = "/eliminarproducto";
+        form.submit();
+      }
+    });
+  }
+</script>
+<%- include ('layouts/footer.ejs') -%>
