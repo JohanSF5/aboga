@@ -1,0 +1,29 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>Bienvenido</h1>
+    <div class="buttons">
+      <ion-button expand="full" color="primary" (click)="GoToLogin()">Iniciar sesión</ion-button>
+      <ion-button expand="full" color="secondary" routerLink="/signup">Registrarse</ion-button>
+    </div>
+
+    <div class="selection">
+      
+      <div class="divider"></div>
+    </div>
+
+    <div class="social-buttons">
+      <ion-button expand="full" color="danger">
+        <ion-icon name="logo-google"></ion-icon>
+        &nbsp;  &nbsp;Iniciar sesión con Google
+      </ion-button>
+      <ion-button expand="full" color="tertiary">
+        <ion-icon name="logo-facebook"></ion-icon>
+        &nbsp;  &nbsp;Iniciar sesión con Facebook
+      </ion-button>
+      <ion-button expand="full" color="dark" >
+        <ion-icon name="logo-apple"></ion-icon>
+        &nbsp;  &nbsp;Iniciar sesión con Apple
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

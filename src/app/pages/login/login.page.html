@@ -1,0 +1,17 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>Iniciar sesión</h1>
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" ></ion-input>
+    </ion-item>
+    <ion-button expand="full" color="primary" (click)="GoToInicio()">Iniciar sesión</ion-button>
+    <ion-button expand="full" color="secondary" (click)="GoToPass()">¿Olvidaste tu contraseña?</ion-button>
+    <ion-button expand="full" color="tertiary" (click)="GoToSignup()">Crear una cuenta</ion-button>
+    <ion-button expand="full" color="primary" (click)="GoToHome()">Volver a inicio</ion-button>
+  </div>
+</ion-content>

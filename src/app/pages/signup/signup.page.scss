@@ -1,0 +1,34 @@
+ion-content {
+  --background: url('https://www.lawnn.com/wp-content/uploads/2016/04/Law-Judgement.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  margin-top: 200px;
+}
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  ion-item {
+    margin-bottom: 15px;
+    --ion-background-color: transparent;
+    --ion-background-color-activated: transparent;
+    --ion-background-color-focused: transparent;
+    --ion-background-color-hover: transparent;
+    --ion-background-color-selected: transparent;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  

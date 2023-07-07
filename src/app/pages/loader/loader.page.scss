@@ -1,0 +1,13 @@
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .custom-spinner {
+    --ion-spinner-lines-width: 6px; /* Ajusta el ancho de las líneas del spinner */
+    width: 100px; /* Ajusta el tamaño del spinner */
+    height: 100px;
+  }
+  
