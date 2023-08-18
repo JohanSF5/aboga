@@ -1,45 +1,104 @@
-.banner {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f0f0f0;
-  }
-  
-  .banner h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .objectives {
-    padding: 30px;
-    background-color: #f9f9f9;
-  }
-  
-  .objectives h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .about {
-    padding: 30px;
-    background-color: #f0f0f0;
-  }
-  
-  .about h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .contact {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .contact h2 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
+/* Importa la fuente Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Establece la fuente Poppins para todo el cuerpo del documento */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define tus estilos específicos */
+.content {
+  --background: linear-gradient(to right, #414345, #232526);
+}
+
+.banner,
+.objectives-container,
+.about,
+.images {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #647A85;
+}
+
+.objectives {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.objectives h2 {
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.lawyers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 20px;
+}
+
+.lawyer {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.lawyer img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.lawyer h3 {
+  margin-bottom: 10px;
+}
+
+.lawyer p {
+  margin-bottom: 20px;
+}
+
+.lawyer ion-button {
+  margin-top: auto;
+}
+
+.contact-info,
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.contact-form ion-button {
+  margin-top: 20px;
+}
+
+/* Estilos para el título de los objetivos */
+.objectives-container .objectives h2 {
+  color: #FFFFFF;
+}
+
+/* Estilos para los cards de los objetivos */
+.objectives-container ion-card {
+  background-color: #344B46;
+  color: #FFFFFF;
+}
+
+.objectives-container ion-card-header ion-card-title {
+  color: #FFFFFF;
+}

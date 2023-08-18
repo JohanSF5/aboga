@@ -1,23 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage implements OnInit {
+export class InicioPage {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private menuController: MenuController, private navController: NavController) { }
 
-  ngOnInit() {
+  openPage(page: string) {
+    this.navController.navigateForward(page);
+    this.menuController.close();
   }
 
-  GoToAbogados() {
-    this.router.navigate(['/abogados'])
+  logout() {
+    this.router.navigate(['/home']);
+    this.menuController.close();
   }
 
-  GoToContacto() {
-    this.router.navigate(['/contacto'])
+  closeMenu() {
+    this.menuController.close();
   }
 }

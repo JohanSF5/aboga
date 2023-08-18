@@ -5,12 +5,13 @@
     </ion-buttons>
     <ion-title>AbogApp</ion-title>
     <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
-      <ion-button (click)="openPage('inicio')">
+      <ion-button (click)="openPage('admin')">
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-menu side="start" content-id="main-content">
   <ion-header>
     <ion-toolbar>
@@ -24,9 +25,7 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item (click)="openPage('inicio')">Inicio</ion-item>
-      <ion-item (click)="openPage('abogados')">Agenda tu cita</ion-item>
-      <ion-item (click)="openPage('contacto')">Contacto</ion-item>
+      <ion-item (click)="openPage('admincitas')">Citas agendadas</ion-item>
       <ion-item color="danger" (click)="logout()">Cerrar Sesión</ion-item>
     </ion-list>
   </ion-content>

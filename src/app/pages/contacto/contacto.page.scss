@@ -1,18 +1,25 @@
-.contact-info {
-    padding: 30px;
-  }
-  
-  .contact-info h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .contact-form {
-    padding: 30px;
-  }
-  
-  .contact-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+.content {
+  --background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.contact-info,
+.contact-form,
+.google-map {
+  background-color: #647A85;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  --ion-background-color: transparent;
+  --ion-background-color-activated: transparent;
+  --ion-background-color-focused: transparent;
+  --ion-background-color-hover: transparent;
+  --ion-background-color-selected: transparent;
+}
+.contact-info h2,
+.contact-form h2 {
+  margin-bottom: 10px;
+}
+
+.contact-form ion-button {
+  margin-top: 20px;
+}

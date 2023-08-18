@@ -1,24 +1,24 @@
 <ion-content>
   <div class="container">
     <div class="form-container">
-      <h2>Registro de Usuario</h2>
+      <h2 class="title">Registro de Usuario</h2>
       <form>
-        <ion-item>
+        <ion-item class="input-item">
           <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text" required></ion-input>
+          <ion-input name="nombre" type="text" required [(ngModel)]="usuario.nombre"></ion-input>
         </ion-item>
-
-        <ion-item>
+        
+        <ion-item class="input-item">
           <ion-label position="floating">Correo electrónico</ion-label>
-          <ion-input type="email" required></ion-input>
+          <ion-input name="correoElectronico" type="email" required [(ngModel)]="usuario.correoElectronico"></ion-input>
         </ion-item>
-
-        <ion-item>
+        
+        <ion-item class="input-item">
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" required></ion-input>
+          <ion-input name="contrasena" type="password" required [(ngModel)]="usuario.contrasena"></ion-input>
         </ion-item>
-
-        <ion-button expand="full" color="primary">Registrarse</ion-button>
+        
+        <ion-button expand="full" color="primary" (click)="registrarUsuario()">Registrarse</ion-button>
         <ion-button expand="full" color="secondary" (click)="GoToLogin()">¿Ya tienes una cuenta? Inicia sesión</ion-button>
       </form>
     </div>

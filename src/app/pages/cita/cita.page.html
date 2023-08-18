@@ -1,34 +1,65 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Agenda tu Cita</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>AbogApp</ion-title>
+    <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+      <ion-button (click)="openPage('inicio')">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+      <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+        <ion-button (click)="closeMenu()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="openPage('inicio')">Inicio</ion-item>
+      <ion-item (click)="openPage('abogados')">Agenda tu cita</ion-item>
+      <ion-item (click)="openPage('contacto')">Contacto</ion-item>
+      <ion-item color="danger" (click)="logout()">Cerrar Sesión</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-content id="main-content" class="content">
   <div class="appointment-form">
     <h2>Solicitar una Cita</h2>
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Nombre</ion-label>
-        <ion-input type="text" required></ion-input>
+        <ion-input name="nombre" type="text" required [(ngModel)]="cita.nombre"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Correo Electrónico</ion-label>
-        <ion-input type="email" required></ion-input>
+        <ion-input name="correo" type="email" required [(ngModel)]="cita.correo"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Teléfono</ion-label>
-        <ion-input type="tel" required></ion-input>
+        <ion-input name="telefono" type="tel" required [(ngModel)]="cita.telefono"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Motivo de la Cita</ion-label>
-        <ion-textarea rows="4" required></ion-textarea>
+        <ion-textarea name="cita" rows="4" required [(ngModel)]="cita.cita"></ion-textarea>
       </ion-item>
 
-      <ion-button expand="full" color="primary">Agendar Cita</ion-button>
+      <ion-button expand="full" color="primary" (click)="registrarCita()">Agendar Cita</ion-button>
     </ion-list>
+  </div>
+  <div class="images">
+    <img src="assets/images/Aboga2.jpeg" alt="Abogado 1">
   </div>
 </ion-content>

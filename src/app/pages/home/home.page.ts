@@ -20,4 +20,5 @@ export class HomePage implements OnInit {
   GoToSignup() {
     this.router.navigate(['/signup'])
   }
+  
 }

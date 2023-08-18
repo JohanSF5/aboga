@@ -1,0 +1,96 @@
+.content {
+    --background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  }
+  
+  .banner,
+  .objectives-container,
+  .about,
+  .images {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #647A85;
+  }
+  
+  .objectives {
+    display: flex;
+  
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .objectives h2 {
+    margin-bottom: 20px;
+  }
+  
+  .lawyers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin: 20px;
+  }
+  
+  .lawyer {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .lawyer img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+  
+  .lawyer h3 {
+    margin-bottom: 10px;
+  }
+  
+  .lawyer p {
+    margin-bottom: 20px;
+  }
+  
+  .lawyer ion-button {
+    margin-top: auto;
+  }
+  
+  .contact-info,
+  .contact-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .contact-info h2,
+  .contact-form h2 {
+    margin-bottom: 10px;
+  }
+  
+  .contact-form ion-button {
+    margin-top: 20px;
+  }
+  
+  .objectives-container {
+    .objectives {
+      h2 {
+        /* Estilos para el título si los tienes */
+      }
+  
+      ion-card {
+        background-color: #344B46; /* Cambia "your-new-color" al color deseado */
+        color: #FFFFFF;
+    }
+    ion-card-header {
+      ion-card-title {
+        color: #FFFFFF;
+      }
+    }
+  }
+  }

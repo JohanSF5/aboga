@@ -13,6 +13,6 @@ export class LoaderPage {
     setTimeout(() => {
       this.showSpinner = false;
       this.router.navigate(['/home']);
-    }, 5000);
+    }, 3000);
   }
 }

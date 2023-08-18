@@ -1,16 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Contacto</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>AbogApp</ion-title>
+    <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+      <ion-button (click)="openPage('inicio')">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+      <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+        <ion-button (click)="closeMenu()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="openPage('inicio')">Inicio</ion-item>
+      <ion-item (click)="openPage('abogados')">Agenda tu cita</ion-item>
+      <ion-item (click)="openPage('contacto')">Contacto</ion-item>
+      <ion-item color="danger" (click)="logout()">Cerrar Sesión</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content" class="content">
   <div class="contact-info">
     <h2>Información de Contacto</h2>
     <ion-list>
       <ion-item>
         <ion-icon slot="start" name="location-outline"></ion-icon>
-        <ion-label>Dirección: Calle Renzo Piano #2023, Ciudad Juárez, Chihuahua, México</ion-label>
+        <ion-label>Dirección: Calle Renzo Piano #2023 <br> Ciudad Juárez, Chihuahua, México</ion-label>
       </ion-item>
 
       <ion-item>
@@ -25,25 +54,36 @@
     </ion-list>
   </div>
 
+  <div class="google-map">
+    <h2>Nuestra Ubicación</h2>
+    <iframe
+      width="100%"
+      height="300"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.6260429055646!2d-106.37495148797953!3d31.61670517406236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e767b83891ca5b%3A0x190e9a6428863206!2sC.%20Renzo%20Piano%202023%2C%2032575%20Cd%20Ju%C3%A1rez%2C%20Chih.!5e0!3m2!1ses-419!2smx!4v1692042853151!5m2!1ses-419!2smx"      allowfullscreen=""
+    ></iframe>
+  </div>
+
   <div class="contact-form">
     <h2>Formulario de Contacto</h2>
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Nombre</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input name="nombre" type="text" required [(ngModel)]="usuario.nombre"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Email</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input name="correo" type="email" required [(ngModel)]="usuario.correo"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Mensaje</ion-label>
-        <ion-textarea rows="4"></ion-textarea>
+        <ion-label position="stacked">Duda, Queja o Aclaración</ion-label>
+        <ion-textarea rows="4" name="mensaje" required [(ngModel)]="usuario.mensaje"></ion-textarea>
       </ion-item>
 
-      <ion-button expand="full" color="primary">Enviar Mensaje</ion-button>
+      <ion-button expand="full" color="primary" (click)="registrarDuda()">Enviar Mensaje</ion-button>
     </ion-list>
   </div>
 </ion-content>

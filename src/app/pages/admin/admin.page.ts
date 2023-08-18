@@ -1,15 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  selector: 'app-admin',
+  templateUrl: './admin.page.html',
+  styleUrls: ['./admin.page.scss'],
 })
-export class AppComponent {
+export class AdminPage implements OnInit {
+
   constructor(private router: Router, private http: HttpClient, private menuController: MenuController, private navController: NavController) {}
+
+  ngOnInit() {
+  }
 
 
   openPage(page: string) {
@@ -27,5 +31,4 @@ export class AppComponent {
   closeMenu() {
     this.menuController.close();
   }
-  
 }

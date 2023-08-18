@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>AbogApp</ion-title>
+    <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+      <ion-button (click)="openPage('admin')">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" class="content">
+  <div class="citas">
+    <h2>Listado de Citas</h2>
+    <div *ngFor="let cita of citasData" class="cita-container">
+      <ion-item class="cita-item">
+        <ion-label>
+          <h3>{{ cita.nombre }}</h3>
+          <p>Correo: {{ cita.correo }}</p>
+          <p>Teléfono: {{ cita.telefono }}</p>
+          <p>Motivo de Cita: {{ cita.cita }}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

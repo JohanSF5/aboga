@@ -5,44 +5,52 @@ ion-content {
 
 .container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 200px auto 0;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  margin-top: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-  
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  ion-item {
-    margin-bottom: 20px;
-    --ion-background-color: transparent;
-    --ion-background-color-activated: transparent;
-    --ion-background-color-focused: transparent;
-    --ion-background-color-hover: transparent;
-    --ion-background-color-selected: transparent;
-  }
-  
-  ion-button {
-    margin-bottom: 10px;
-  }
-  
-  ion-button[color="primary"] {
-    --ion-background-color: #4caf50;
-  }
-  
-  ion-button[color="secondary"] {
-    --ion-background-color: #f44336;
-  }
-  
-  ion-button[color="tertiary"] {
-    --ion-background-color: #2196f3;
-  }
-  
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-item {
+  margin-bottom: 20px;
+  --ion-background-color: transparent;
+  --ion-background-color-activated: transparent;
+  --ion-background-color-focused: transparent;
+  --ion-background-color-hover: transparent;
+  --ion-background-color-selected: transparent;
+}
+
+ion-button {
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.4s;
+}
+
+ion-button[color="primary"] {
+  --ion-background-color: #4caf50;
+}
+
+ion-button[color="secondary"] {
+  --ion-background-color: #f44336;
+}
+
+ion-button[color="tertiary"] {
+  --ion-background-color: #2196f3;
+}
+
+ion-button:hover {
+  --ion-background-color: darken(var(--ion-color-primary), 20%);
+}
+

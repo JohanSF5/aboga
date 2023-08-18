@@ -1,29 +1,60 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Agenda tu Cita</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>AbogApp</ion-title>
+    <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+      <ion-button (click)="openPage('inicio')">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+      <ion-buttons slot="end"> <!-- Añade botones en el lado derecho -->
+        <ion-button (click)="closeMenu()">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="openPage('inicio')">Inicio</ion-item>
+      <ion-item (click)="openPage('abogados')">Agenda tu cita</ion-item>
+      <ion-item (click)="openPage('contacto')">Contacto</ion-item>
+      <ion-item color="danger" (click)="logout()">Cerrar Sesión</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-content id="main-content" class="content">
   <div class="lawyers">
     <div class="lawyer">
-      <img src="assets/images/lawyer1.jpg" alt="Abogado 1">
-      <h3>Nombre del Abogado 1</h3>
-      <p>Especialidad: Derecho Corporativo</p>
+      <img src="assets/images/A1.png" alt="Abogado 1">
+      <h3>Alejandro Gómez</h3>
+      <p>Especialidad: Derecho Penal</p>
+      <p>Alejandro Gómez es un apasionado defensor de los derechos y la justicia en el ámbito penal. Con más de una década de experiencia en casos penales, ha demostrado su habilidad para abordar con éxito una amplia gama de situaciones legales.</p>
       <ion-button expand="full" color="primary" (click)="GoToCita()">Agendar Cita</ion-button>
     </div>
 
     <div class="lawyer">
-      <img src="assets/images/lawyer2.jpg" alt="Abogado 2">
-      <h3>Nombre del Abogado 2</h3>
+      <img src="assets/images/A2.png" alt="Abogado 2">
+      <h3>Javier Pérez</h3>
       <p>Especialidad: Derecho de Familia</p>
+      <p>Javier Pérez es un experimentado abogado especializado en Derecho de Familia. Ha dedicado su carrera a ayudar a familias a resolver problemas legales relacionados con divorcios, custodia de menores, adopciones y más.</p>
       <ion-button expand="full" color="primary" (click)="GoToCita()">Agendar Cita</ion-button>
     </div>
 
     <div class="lawyer">
-      <img src="assets/images/lawyer3.jpg" alt="Abogado 3">
-      <h3>Nombre del Abogado 3</h3>
+      <img src="assets/images/A3.png" alt="Abogado 3">
+      <h3>Andrés Sánchez</h3>
       <p>Especialidad: Derecho Laboral</p>
+      <p>Andrés Sánchez es un abogado altamente competente en el campo del Derecho Laboral. Con una amplia comprensión de las leyes y regulaciones laborales, se ha convertido en un defensor incansable de los derechos de los trabajadores y ha ayudado a numerosos empleados a enfrentar situaciones laborales desafiantes.</p>
       <ion-button expand="full" color="primary" (click)="GoToCita()">Agendar Cita</ion-button>
     </div>
 

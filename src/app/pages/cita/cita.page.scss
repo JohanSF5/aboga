@@ -1,9 +1,24 @@
-.appointment-form {
-    padding: 30px;
-  }
-  
-  .appointment-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
+.content {
+  --background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.appointment-form,
+.images {
+  background-color: #647A85;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  --ion-background-color: transparent;
+  --ion-background-color-activated: transparent;
+  --ion-background-color-focused: transparent;
+  --ion-background-color-hover: transparent;
+  --ion-background-color-selected: transparent;
+}
+
+.appointment-form h2 {
+  margin-bottom: 10px;
+}
+
+.appointment-form ion-button {
+  margin-top: 20px;
+}
